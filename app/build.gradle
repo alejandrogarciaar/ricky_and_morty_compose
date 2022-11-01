@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'com.johng.rick_and_morty_compose'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.johng.rick_and_morty_compose"
         minSdk 26
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -48,16 +48,19 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
-    implementation 'androidx.activity:activity-compose:1.3.1'
-    implementation "androidx.compose.ui:ui:$compose_ui_version"
-    implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"
-    implementation 'androidx.compose.material:material:1.1.1'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
-    debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"
-    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
+    implementation "androidx.core:core-ktx:${androidx.core}"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:${androidx.lifecycle}"
+    implementation "androidx.activity:activity-compose:${androidx.activityCompose}"
+    implementation "androidx.compose.ui:ui:${androidx.uiCompose}"
+    implementation "androidx.compose.ui:ui-tooling-preview:${androidx.uiCompose}"
+    implementation "androidx.compose.material:material:${androidx.uiCompose}"
+
+    testImplementation "junit:junit:${junit.version}"
+
+    androidTestImplementation "androidx.test.ext:junit:${androidInstrumentation.junitVersion}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${androidInstrumentation.espressoVersion}"
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:${androidx.uiCompose}"
+
+    debugImplementation "androidx.compose.ui:ui-tooling:${androidx.uiCompose}"
+    debugImplementation "androidx.compose.ui:ui-test-manifest:${androidx.uiCompose}"
 }
